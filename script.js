@@ -28,6 +28,9 @@ function drop(ev) {
 let itemCount = 0;
 const poolRow = document.getElementById("poolRow");
 
+// 初期画像のsrc一覧を保持
+let initialImageSrcs = [];
+
 function createImageElement(src, labelText = "") {
   const wrapper = document.createElement("div");
   wrapper.classList.add("tier-item-wrapper");
@@ -43,9 +46,10 @@ function createImageElement(src, labelText = "") {
   img.addEventListener("contextmenu", (e) => {
     e.preventDefault();
     const parent = wrapper.parentElement;
-    if (parent.id === "poolRow") {
+    // 初期画像は削除不可
+    if (parent.id === "poolRow" && !initialImageSrcs.includes(img.src)) {
       wrapper.remove(); // プール内なら削除
-    } else {
+    } else if (parent.id !== "poolRow") {
       poolRow.appendChild(wrapper); // それ以外なら戻す
     }
   });
@@ -104,16 +108,22 @@ document.addEventListener("paste", (event) => {
 
 window.addEventListener("DOMContentLoaded", () => {
   const initialImages = [
-    { src: "images/kaiou.png", label: "海皇" },
     { src: "images/snake.png", label: "スネークアイ" },
     { src: "images/blue.png", label: "青眼" },
     { src: "images/hakai.png", label: "破械" },
     { src: "images/memento.png", label: "メメント" },
-    { src: "images/metabi.png", label: "メタビ" },
+    { src: "images/kaiou.png", label: "海皇" },
     { src: "images/tenpai.png", label: "天盃" },
     { src: "images/tiera.png", label: "ティアラ" },
-    { src: "images/yubel.png", label: "ユベル" }
+    { src: "images/yubel.png", label: "ユベル" },
+    { src: "images/metabi.png", label: "メタビ" },
 ];
+  // 初期画像のsrcを絶対パスで保持
+  initialImageSrcs = initialImages.map(obj => {
+    const a = document.createElement('a');
+    a.href = obj.src;
+    return a.href;
+  });
   initialImages.forEach(obj => {
     addImageToPool(obj.src, obj.label);
   });

@@ -71,8 +71,8 @@ body {
   left: 1.5px;
   width: 100%;
   height: 30%;
-  background: rgba(0, 0, 0, 0.8); /* ✅ 黒系グレー背景、透過10% */
-  color: white;                  /* ✅ 白文字 */
+  background: rgba(0, 0, 0, 0.8); /* 黒系グレー背景、透過10% */
+  color: white;                  /* 白文字 */
   font-size: 14px;
   text-align: center;
   outline: none;
@@ -97,4 +97,14 @@ body {
 .pool-label {
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+#poolRow {
+  max-height: 160px;
+  overflow-x: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding-bottom: 5px;
 }
