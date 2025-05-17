@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tier Maker</title>
   <link rel="stylesheet" href="style.css" />
+
+  <meta property="og:title" content="Tier Maker" />
+  <meta property="og:description" content="遊戯王マスターデュエルの Tier 表が作成できる web サイトです。" />
+  <meta property="og:image" content="https://fugarta.github.io/tier-maker/images/ogp.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fugarta.github.io/tier-maker/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://fugarta.github.io/tier-maker/images/ogp.png" />
+
+
 </head>
 <body>
   <div id="mainContainer">
@@ -38,8 +50,9 @@
   <div class="controls">
     <input type="file" id="imageUpload" accept="image/*" multiple />
     <button id="saveButton">Tier表を保存</button>
-    <p>※画像をペースト（Ctrl+V）またはアップロードで追加できます</p>
-  </div>
+    <p>画像をペースト（Ctrl+V）またはアップロードで追加できます</p>
+    <p>Tier表内で画像を右クリックすると、画像プールに戻すことができます</p>
+</div>
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
