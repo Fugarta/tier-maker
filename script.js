@@ -1,6 +1,9 @@
+import { enableTouchDrag } from "./js/touch-support.js";
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
+window.allowDrop = allowDrop;
 
 function drag(ev) {
   ev.dataTransfer.setData("text/plain", ev.target.id);
@@ -24,6 +27,7 @@ function drop(ev) {
     row.appendChild(dragged);
   }
 }
+window.drop = drop;
 
 let itemCount = 0;
 const poolRow = document.getElementById("poolRow");
@@ -41,6 +45,7 @@ function createImageElement(src, labelText = "") {
   img.setAttribute("draggable", "true");
   img.id = "item-" + itemCount++;
   img.addEventListener("dragstart", drag);
+  img.addEventListener("touchstart", enableTouchDrag, { passive: false });
 
   // 右クリック処理
   img.addEventListener("contextmenu", (e) => {
