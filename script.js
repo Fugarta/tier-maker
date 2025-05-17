@@ -106,8 +106,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const initialImages = [
     { src: "images/kaiou.png", label: "海皇" },
     { src: "images/snake.png", label: "スネークアイ" },
-    { src: "images/blue.png", label: "青眼" }
-  ];
+    { src: "images/blue.png", label: "青眼" },
+    { src: "images/hakai.png", label: "破械" },
+    { src: "images/memento.png", label: "メメント" },
+    { src: "images/metabi.png", label: "メタビ" },
+    { src: "images/tenpai.png", label: "天盃" },
+    { src: "images/tiera.png", label: "ティアラ" },
+    { src: "images/yubel.png", label: "ユベル" }
+];
   initialImages.forEach(obj => {
     addImageToPool(obj.src, obj.label);
   });
