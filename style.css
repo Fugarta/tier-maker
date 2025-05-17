@@ -100,11 +100,22 @@ body {
 }
 
 #poolRow {
-  max-height: 160px;
+  max-height: 140px;
+  min-height: 140px;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
   padding-bottom: 5px;
+}
+
+#poolRow .tier-item-wrapper {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  flex: 0 0 120px;
 }
