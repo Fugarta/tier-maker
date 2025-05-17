@@ -138,3 +138,16 @@ window.addEventListener("DOMContentLoaded", () => {
     addImageToPool(obj.src, obj.label);
   });
 });
+
+document.getElementById("tweetButton").addEventListener("click", () => {
+  const tweetText = encodeURIComponent("Tier Makerで自分だけのティア表を作りました\nhttps://fugarta.github.io/tier-maker/");
+  html2canvas(document.getElementById("mainContainer")).then(canvas => {
+    canvas.toBlob(blob => {
+      // 画像を一時的にアップロードする必要があるため、Twitter公式APIや外部サービスが必要です
+      // ここでは画像なしでテキスト投稿用のURLを生成します
+      // 画像付き投稿はTwitter API連携や外部アップローダが必要です
+      const url = "https://twitter.com/intent/tweet?text=" + tweetText;
+      window.open(url, "_blank");
+    });
+  });
+});
