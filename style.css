@@ -42,13 +42,13 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   flex: 1;
-  min-height: 60px;
+  min-height: 120px;
 }
 
 .tier-item-wrapper {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   align-items: flex-end;
 }
 
@@ -73,7 +73,7 @@ body {
   height: 30%;
   background: rgba(0, 0, 0, 0.8); /* ✅ 黒系グレー背景、透過10% */
   color: white;                  /* ✅ 白文字 */
-  font-size: 9px;
+  font-size: 14px;
   text-align: center;
   outline: none;
   resize: none;
