@@ -72,31 +72,28 @@ function createImageElement(src, labelText = "") {
   return wrapper;
 }
 
-function addImageToPool(src, labelText = "") {
+function addImageToPool(src, labelText = "", toFirst = false) {
   const wrapper = createImageElement(src, labelText);
-  poolRow.appendChild(wrapper);
+  if (toFirst && poolRow.firstChild) {
+    poolRow.insertBefore(wrapper, poolRow.firstChild);
+  } else {
+    poolRow.appendChild(wrapper);
+  }
 }
 
+// 画像アップロード時
 document.getElementById("imageUpload").addEventListener("change", (event) => {
   const files = event.target.files;
   for (const file of files) {
     const reader = new FileReader();
     reader.onload = function(e) {
-      addImageToPool(e.target.result);
+      addImageToPool(e.target.result, "", true); // 先頭に追加
     };
     reader.readAsDataURL(file);
   }
 });
 
-document.getElementById("saveButton").addEventListener("click", () => {
-  html2canvas(document.getElementById("mainContainer")).then(canvas => {
-    const link = document.createElement("a");
-    link.download = "tier-list.png";
-    link.href = canvas.toDataURL();
-    link.click();
-  });
-});
-
+// 画像ペースト時
 document.addEventListener("paste", (event) => {
   const items = event.clipboardData.items;
   for (const item of items) {
@@ -104,13 +101,14 @@ document.addEventListener("paste", (event) => {
       const blob = item.getAsFile();
       const reader = new FileReader();
       reader.onload = function(e) {
-        addImageToPool(e.target.result);
+        addImageToPool(e.target.result, "", true); // 先頭に追加
       };
       reader.readAsDataURL(blob);
     }
   }
 });
 
+// 初期化時はそのまま末尾に追加
 window.addEventListener("DOMContentLoaded", () => {
   const initialImages = [
     { src: "images/snake.png", label: "スネークアイ" },
@@ -132,7 +130,7 @@ window.addEventListener("DOMContentLoaded", () => {
     { src: "images/dyno.png", label: "ダイノルフィア" },
     { src: "images/ensune.png", label: "炎スネ" }, 
     { src: "images/smith.png", label: "スミスGS" },
-];
+  ];
   // 初期画像のsrcを絶対パスで保持
   initialImageSrcs = initialImages.map(obj => {
     const a = document.createElement('a');
@@ -140,7 +138,16 @@ window.addEventListener("DOMContentLoaded", () => {
     return a.href;
   });
   initialImages.forEach(obj => {
-    addImageToPool(obj.src, obj.label);
+    addImageToPool(obj.src, obj.label); // 末尾に追加
+  });
+});
+
+document.getElementById("saveButton").addEventListener("click", () => {
+  html2canvas(document.getElementById("mainContainer")).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "tier-list.png";
+    link.href = canvas.toDataURL();
+    link.click();
   });
 });
 
