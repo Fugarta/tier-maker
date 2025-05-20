@@ -11,6 +11,12 @@ body {
   margin-bottom: 30px;
 }
 
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .controls {
   margin-top: 30px;
   text-align: center;
@@ -58,6 +64,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tier {
@@ -188,4 +196,21 @@ body {
   opacity: 0.6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.2s, ease;
+}
+
+@media (max-width: 600px) {
+  .tier-row {
+    max-width: calc(2 * 44vw + 10px);
+    /* 2枚＋隙間分 */
+  }
+
+  .tier-item-wrapper,
+  #poolRow .tier-item-wrapper {
+    width: 30vw;
+    height: 30vw;
+    min-width: 30vw;
+    min-height: 30vw;
+    max-width: 30vw;
+    max-height: 30vw;
+  }
 }
