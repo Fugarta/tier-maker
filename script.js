@@ -128,11 +128,14 @@ window.addEventListener("DOMContentLoaded", () => {
     { src: "images/punk.png", label: "P.U.N.K." },
     { src: "images/centyu.png", label: "センチュリオン" },
     { src: "images/sprit.png", label: "スプライト" },
-    { src: "images/gimipape.png", label: "ギミパペ" },
-    { src: "images/dragonknight.png", label: "竜剣士" },
-    { src: "images/dyno.png", label: "ダイノルフィア" },
     { src: "images/ensune.png", label: "炎スネ" }, 
+    { src: "images/race.png", label: "R-ACE" },
+    { src: "images/atiti.png", label: "@イグニスター" },
+    { src: "images/dyno.png", label: "ダイノルフィア" },
+    { src: "images/dragonknight.png", label: "竜剣士" },
+    { src: "images/gimipape.png", label: "ギミパペ" },
     { src: "images/smith.png", label: "スミスGS" },
+    { src: "images/genseki.png", label: "原石GS" },
   ];
   // 初期画像のsrcを絶対パスで保持
   initialImageSrcs = initialImages.map(obj => {
