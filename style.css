@@ -59,6 +59,29 @@ body {
   border-color: #888;
   transform: translateY(1px) scale(0.98);
 }
+/* デフォルト値 */
+:root {
+  --slot-width: 140px; /* スロットの幅 */
+  --slot-height: 140px;
+  --gap: 18px;
+  --min-display-width: calc(var(--slot-width) * 9.8); /* 最小幅 */
+}
+
+/* 画面幅が1000px以下の場合は小さくする */
+@media (max-width: 1000px) {
+  :root {
+    --slot-width: 10vw;  
+    --slot-height: 10vw;
+    --gap: calc(var(--slot-width) * 0.1);
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --slot-width: 15vw;  
+    --slot-height: 15vw;
+    --gap: calc(var(--slot-width) * 0.1);
+  }
+}
 
 .tier-container {
   display: flex;
@@ -70,12 +93,13 @@ body {
 
 .tier {
   display: flex;
-  align-items: center;
+  align-items: center; /* 既存の設定 */
+  justify-content: flex-start; /* 横方向はそのまま */
   background: #f5f5f5;
   border: 2px solid #bdbdbd;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(100, 100, 100, 0.07);
-  padding: 14px 14px 14px 0;
+  padding: var(--gap) var(--gap) var(--gap) 0;
   margin-bottom: 8px;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
@@ -86,7 +110,7 @@ body {
 }
 
 .tier-label {
-  width: 60px;
+  width: calc(var(--slot-width) * 0.5);
   font-weight: bold;
   text-align: center;
   margin-right: 14px;
@@ -96,16 +120,16 @@ body {
 .tier-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--gap);
   flex: 1;
-  min-height: 120px;
-  align-items: flex-start;
+  min-height: calc(var(--slot-height) * 1.15);
+  align-items: center; /* 上下方向に中央揃え */
 }
 
 .tier-item-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: var(--slot-width);
+  height: var(--slot-height);
   align-items: flex-end;
   background: #fff;
   border-radius: 8px;
@@ -160,7 +184,7 @@ body {
 
 .pool {
   margin-top: 30px;
-  padding: 10px;
+  padding: var(--gap);
   background: #e3e3e3;
   border: 2px dashed #aaa;
 }
@@ -171,46 +195,27 @@ body {
 }
 
 #poolRow {
-  max-height: 140px;
-  min-height: 140px;
+  min-height: calc(var(--slot-height) * 1.2);
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: var(--gap);
   padding-bottom: 5px;
+  align-items: start;
 }
 
 #poolRow .tier-item-wrapper {
-  width: 120px;
-  height: 120px;
-  min-width: 120px;
-  min-height: 120px;
-  max-width: 120px;
-  max-height: 120px;
-  flex: 0 0 120px;
+  width: var(--slot-width);
+  height: var(--slot-height);
+  flex: 0 0 var(--slot-width);
 }
-
+#poolRow .tier-item-wrapper:first-child {
+  margin-left: 0;
+}
 .touch-dragging {
   pointer-events: none;
   opacity: 0.6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.2s, ease;
-}
-
-@media (max-width: 600px) {
-  .tier-row {
-    max-width: calc(2 * 44vw + 10px);
-    /* 2枚＋隙間分 */
-  }
-
-  .tier-item-wrapper,
-  #poolRow .tier-item-wrapper {
-    width: 30vw;
-    height: 30vw;
-    min-width: 30vw;
-    min-height: 30vw;
-    max-width: 30vw;
-    max-height: 30vw;
-  }
 }
