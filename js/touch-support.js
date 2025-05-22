@@ -33,12 +33,18 @@ export function enableTouchDrag(ev) {
   const handleTouchEnd = (ev) => {
     const touch = ev.changedTouches[0];
     // ドロップ先の要素を取得
-    const dropArea = document
-      .elementFromPoint(touch.clientX, touch.clientY)
-      ?.closest('.tier');
-    const dropTarget = dropArea?.querySelector('.tier-row');
-    if (dropTarget) {
-      dropTarget.appendChild(draggingElem);
+    const dropElem = document.elementFromPoint(touch.clientX, touch.clientY);
+    const row = dropElem?.closest('.tier-row');
+    const target = dropElem?.closest('.tier-item-wrapper');
+
+    if (row) {
+      if (target && target !== draggingElem) {
+        // tier-item-wrapper上にドロップした場合、その前に挿入
+        row.insertBefore(draggingElem, target);
+      } else {
+        // tier-rowの空き部分にドロップした場合、末尾に追加
+        row.appendChild(draggingElem);
+      }
     }
 
     // ドラッグ中の要素を元の位置に戻す
