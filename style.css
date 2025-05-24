@@ -219,3 +219,16 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.2s, ease;
 }
+.twitter-link {
+  text-decoration: none;
+  color: #1DA1F2;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.twitter-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}

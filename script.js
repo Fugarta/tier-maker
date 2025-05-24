@@ -16,7 +16,6 @@ function drop(ev) {
   let target = ev.target.closest(".tier-item-wrapper");
 
   const row = ev.target.closest(".tier-row");
-
   if (!dragged || !row) return;
 
   if (target && target !== dragged) {
