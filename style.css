@@ -2,6 +2,8 @@ body {
   font-family: sans-serif;
   margin: 20px;
   background: #f2f2f2;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #333; /* Dark gray for text */
 }
 
 .title {
@@ -9,6 +11,7 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 30px;
+  color: #111; /* Dark gray for titles */  
 }
 
 #mainContainer {
