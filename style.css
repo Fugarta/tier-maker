@@ -14,6 +14,33 @@ body {
   color: #111; /* Dark gray for titles */  
 }
 
+
+/* デフォルト値 */
+:root {
+  --slot-width: 140px; /* スロットの幅 */
+  --slot-height: 140px;
+  --gap: 18px;
+  --min-display-width: calc(var(--slot-width) * 9.8); /* 最小幅 */
+  --font-size: 1rem;
+}
+
+/* 画面幅が1000px以下の場合は小さくする */
+@media (max-width: 1000px) {
+  :root {
+    --slot-width: 10vw;  
+    --slot-height: 10vw;
+    --gap: calc(var(--slot-width) * 0.1);
+    --font-size: 0.85rem;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --slot-width: 15vw;  
+    --slot-height: 15vw;
+    --gap: calc(var(--slot-width) * 0.1);
+    --font-size: 0.75rem;
+  }
+}
 #mainContainer {
   display: flex;
   flex-direction: column;
@@ -38,7 +65,7 @@ body {
   border: 2px solid #b0b0b0;
   border-radius: 6px;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: var(--font-size);
   font-weight: bold;
   margin: 0 5px 10px 5px;
   box-shadow: 0 2px 6px rgba(120, 120, 120, 0.10);
@@ -61,29 +88,6 @@ body {
   background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
   border-color: #888;
   transform: translateY(1px) scale(0.98);
-}
-/* デフォルト値 */
-:root {
-  --slot-width: 140px; /* スロットの幅 */
-  --slot-height: 140px;
-  --gap: 18px;
-  --min-display-width: calc(var(--slot-width) * 9.8); /* 最小幅 */
-}
-
-/* 画面幅が1000px以下の場合は小さくする */
-@media (max-width: 1000px) {
-  :root {
-    --slot-width: 10vw;  
-    --slot-height: 10vw;
-    --gap: calc(var(--slot-width) * 0.1);
-  }
-}
-@media (max-width: 600px) {
-  :root {
-    --slot-width: 15vw;  
-    --slot-height: 15vw;
-    --gap: calc(var(--slot-width) * 0.1);
-  }
 }
 
 .tier-container {
@@ -117,7 +121,7 @@ body {
   font-weight: bold;
   text-align: center;
   margin-right: 14px;
-  font-size: 1.2rem;
+  font-size: var(--font-size);
 }
 
 .tier-row {
@@ -171,7 +175,7 @@ body {
   height: 30%;
   background: rgba(60, 60, 60, 0.85);
   color: #fff;
-  font-size: 14px;
+  font-size: var(--font-size);
   text-align: center;
   outline: none;
   resize: none;

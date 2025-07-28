@@ -107,38 +107,20 @@ document.addEventListener("paste", (event) => {
   }
 });
 
-// 初期化時はそのまま末尾に追加
-window.addEventListener("DOMContentLoaded", () => {
-  const initialImages = [
-    { src: "images/malice.png", label: "M∀LICE" },
-    { src: "images/blue.png", label: "青眼" },
-    { src: "images/kaiou.png", label: "海皇" },
-    { src: "images/memento.png", label: "メメント" },
-    { src: "images/tenpai.png", label: "天盃" },
-    { src: "images/hakai.png", label: "破械" },
-    { src: "images/tiera.png", label: "ティアラ" },
-    { src: "images/rakuin.png", label: "烙印" },
-    { src: "images/souken.png", label: "相剣" },
-    { src: "images/sprit.png", label: "スプライト" }, 
-    { src: "images/yubel.png", label: "ユベル" },
-    { src: "images/snake.png", label: "スネークアイ" },
-    { src: "images/whiteforest.png", label: "白き森" },
-    { src: "images/metabi.png", label: "メタビ" },
-    { src: "images/centyu.png", label: "センチュリオン" },
-    { src: "images/crystron.png", label: "水晶機巧" },
-    { src: "images/dragonknight.png", label: "竜剣士" },
-    { src: "images/atiti.png", label: "@イグニスター" },
-    { src: "images/dyno.png", label: "ダイノルフィア" },
-    { src: "images/ensune.png", label: "炎スネ" },
-    { src: "images/gimipape.png", label: "ギミパペ" },
-    { src: "images/lightsworm.png", label: "ライトロード" },
-    { src: "images/punk.png", label: "P.U.N.K." },
-    { src: "images/rabu.png", label: "ラビュリンス" },
-    { src: "images/race.png", label: "R-ACE" },
-    { src: "images/reizyu.png", label: "霊獣" },
-    { src: "images/smith.png", label: "スミスGS" },
-  ];
-  // 初期画像のsrcを絶対パスで保持
+// initialImages.txt のパスを外部から指定できるように
+let initialImagesTxtPath = './initialImages.txt';
+
+async function loadInitialImagesList() {
+  const response = await fetch(initialImagesTxtPath);
+  const text = await response.text();
+  return text.split('\n').filter(line => line.trim()).map(line => {
+    const [src, label] = line.split(',').map(s => s.trim());
+    return { src, label };
+  });
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+  const initialImages = await loadInitialImagesList();
   initialImageSrcs = initialImages.map(obj => {
     const a = document.createElement('a');
     a.href = obj.src;

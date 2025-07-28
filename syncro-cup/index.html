@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syncro Cup Tier Maker</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="mainContainer">
+    <h1 class="title" contenteditable="true" spellcheck="false">SYNCRO CUP TIER MAKER</h1>
+    <div id="tierList" class="tier-container">
+      <div class="tier" data-tier="1">
+        <div class="tier-label">1</div>
+        <div class="tier-row" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+      <div class="tier" data-tier="2">
+        <div class="tier-label">2</div>
+        <div class="tier-row" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+      <div class="tier" data-tier="3">
+        <div class="tier-label">3</div>
+        <div class="tier-row" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+      <div class="tier" data-tier="4">
+        <div class="tier-label">4</div>
+        <div class="tier-row" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+    </div>
+  </div>
+  <div id="imagePool" class="pool" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="pool-label">画像プール</div>
+    <div id="poolRow"></div>
+  </div>
+  <div class="controls">
+    <input type="file" id="imageUpload" accept="image/*" multiple />
+    <button id="saveButton">Tier表を保存</button>
+    <button id="tweetButton">Twitterに投稿</button>
+    <p>画像をペースト（Ctrl+V）またはアップロードで追加できます</p>
+    <p>Tier表内で画像を右クリックすると、画像プールに戻すことができます</p>
+  </div>
+  <script type="module" src="../script.js"></script>
+</body>
+</html>
