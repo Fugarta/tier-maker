@@ -4,6 +4,7 @@
 ../images/whiteforest.png,○○白き森
 ../images/syncron.png,勇者シンクロン
 ../images/tenpai.png,天盃龍
+../images/jurac.png,ジュラック
 ../images/kaiou.png,海皇
 ../images/hyoukekkai.png,氷結界
 ../images/crystron.png,水晶機巧
