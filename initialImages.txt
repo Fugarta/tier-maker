@@ -4,6 +4,8 @@ images/gemknight.png,ジェムナイト
 images/orcust.png,オルフェゴール
 images/mitsurugi.png,巳剣
 images/tiera.png,ティアラ
+images/sentou.png,閃刀姫
+images/gekkou.png,月光
 images/atiti.png,@イグニスター
 images/rabu.png,ラビュリンス
 images/blue.png,青眼
