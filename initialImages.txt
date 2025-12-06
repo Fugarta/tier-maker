@@ -8,6 +8,7 @@ images/tiera.png,ティアラメンツ
 images/sentou.png,閃刀姫
 images/rishido.png,リシド
 images/gekkou.png,月光
+images/whiteforest.png,白き森
 images/atiti.png,@イグニスター
 images/rabu.png,ラビュリンス
 images/blue.png,青眼
