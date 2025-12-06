@@ -1,10 +1,12 @@
 images/malice.png,M∀LICE
 images/ryzeal.png,ライゼオル
+images/dragontail.png,ドラゴンテイル
 images/gemknight.png,ジェムナイト
 images/orcust.png,オルフェゴール
 images/mitsurugi.png,巳剣
-images/tiera.png,ティアラ
+images/tiera.png,ティアラメンツ
 images/sentou.png,閃刀姫
+images/rishido.png,リシド
 images/gekkou.png,月光
 images/atiti.png,@イグニスター
 images/rabu.png,ラビュリンス
