@@ -25,6 +25,17 @@
     font-size: 2rem;
   }
 
+  .preset-nav {
+    gap: 8px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .preset-link {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
   .controls {
     padding: 15px 5px 5px 5px;
   }

@@ -1,9 +1,12 @@
-import { CONFIG } from './config.js';
+import { CONFIG, getCurrentPreset } from './config.js';
 import { showErrorMessage, captureMainContainer } from './utils.js';
 
 /**
  * エクスポート（保存・共有）機能モジュール
  */
+
+// 現在のプリセット
+const currentPreset = getCurrentPreset();
 
 /**
  * Tier表を画像として保存
@@ -25,7 +28,7 @@ async function saveTierList() {
  * Twitterに投稿（画像なしのテキスト投稿）
  */
 async function shareToTwitter() {
-  const tweetText = encodeURIComponent(CONFIG.TWEET_TEXT);
+  const tweetText = encodeURIComponent(currentPreset.tweetText);
 
   try {
     // キャプチャは成功確認のため実行（将来的に画像付き投稿に対応する場合に備えて）

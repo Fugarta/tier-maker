@@ -1,4 +1,4 @@
-import { CONFIG } from './config.js';
+import { CONFIG, getCurrentPreset } from './config.js';
 import { showErrorMessage, readImageFile } from './utils.js';
 import { drag } from './dragDrop.js';
 import { enableTouchDrag } from './touch-support.js';
@@ -12,6 +12,9 @@ let itemCount = 0;
 
 // 初期画像のsrc一覧を保持（削除防止用）
 let initialImageSrcs = [];
+
+// 現在のプリセット
+const currentPreset = getCurrentPreset();
 
 /**
  * 画像要素を作成
@@ -81,7 +84,7 @@ export function addImageToPool(src, labelText = "", toFirst = false) {
  */
 async function loadInitialImagesList() {
   try {
-    const response = await fetch(CONFIG.INITIAL_IMAGES_PATH);
+    const response = await fetch(currentPreset.initialImagesPath);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
