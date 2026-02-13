@@ -2,15 +2,25 @@
  * コントロール（ボタン、入力）
  */
 
-.controls {
+.controls-wrapper {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.controls {
   text-align: center;
   background: var(--color-controls-bg);
   border-radius: 10px;
   box-shadow: var(--shadow-md);
   padding: 20px 10px 10px 10px;
-  display: inline-block;
   border: 1.5px solid var(--color-border-light);
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .controls button,

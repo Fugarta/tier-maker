@@ -6,6 +6,7 @@ import { getCurrentPreset } from './config.js';
 import { initializeDragDrop } from './dragDrop.js';
 import { initializeImages, setupImageUpload, setupImagePaste } from './imageManager.js';
 import { initializeExporter } from './exporter.js';
+import { initializeImageComposer } from './imageComposer.js';
 
 /**
  * タイトルを更新
@@ -61,6 +62,9 @@ async function initializeApp() {
 
   // エクスポート機能を初期化
   initializeExporter();
+
+  // 画像結合機能を初期化
+  initializeImageComposer();
 
   // 初期画像を読み込み
   await initializeImages();

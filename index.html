@@ -65,12 +65,29 @@
     <div class="tier-row" id="poolRow"></div>
   </div>
 
-  <div class="controls">
-    <input type="file" id="imageUpload" accept="image/*" multiple />
-    <button id="saveButton">Tier表を保存</button>
-    <button id="tweetButton">Twitterに投稿</button>
-    <p>画像をペースト（Ctrl+V）またはアップロードで追加できます</p>
-    <p>Tier表内で画像を右クリックすると、画像プールに戻すことができます</p>
+  <!-- コントロールエリア -->
+  <div class="controls-wrapper">
+    <div class="controls">
+      <input type="file" id="imageUpload" accept="image/*" multiple />
+      <button id="saveButton">Tier表を保存</button>
+      <button id="tweetButton">Twitterに投稿</button>
+      <p>画像をペースト（Ctrl+V）またはアップロードで追加できます</p>
+      <p>Tier表内で画像を右クリックすると、画像プールに戻すことができます</p>
+    </div>
+
+    <!-- 画像結合コントロール -->
+    <div class="composition-controls">
+      <div class="composition-header">
+        <span class="composition-title">画像結合</span>
+        <span id="selectionCount" class="selection-count" style="display: none;">0/2枚選択中</span>
+      </div>
+      <div class="composition-buttons">
+        <button id="composeHorizontalBtn" class="compose-btn" disabled>横に結合 ◐◑</button>
+        <button id="composeVerticalBtn" class="compose-btn" disabled>縦に結合 ◓◒</button>
+        <button id="clearSelectionBtn" class="compose-btn clear-btn" disabled>選択解除</button>
+      </div>
+      <p class="composition-help">プール内の画像をクリックして2枚選択（1枚目の左半分＋2枚目の右半分で結合）</p>
+    </div>
   </div>
   <!-- プリセット選択メニュー -->
   <nav class="preset-nav">

@@ -2,6 +2,7 @@ import { CONFIG, getCurrentPreset } from './config.js';
 import { showErrorMessage, readImageFile } from './utils.js';
 import { drag } from './dragDrop.js';
 import { enableTouchDrag } from './touch-support.js';
+import { toggleImageSelection } from './imageComposer.js';
 
 /**
  * 画像管理モジュール
@@ -45,6 +46,16 @@ export function createImageElement(src, labelText = "") {
       wrapper.remove(); // プール内なら削除
     } else if (parent.id !== "poolRow") {
       poolRow.appendChild(wrapper); // それ以外なら戻す
+    }
+  });
+
+  // クリックで選択（Ctrlキーを押しながら、またはプール内でのみ）
+  img.addEventListener("click", (e) => {
+    const parent = wrapper.parentElement;
+    // プール内、またはCtrlキー押下時のみ選択可能
+    if (parent.id === "poolRow" || e.ctrlKey || e.metaKey) {
+      e.preventDefault();
+      toggleImageSelection(wrapper);
     }
   });
 
