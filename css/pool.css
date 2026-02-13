@@ -1,0 +1,36 @@
+/**
+ * 画像プールスタイル
+ */
+
+.pool {
+  margin-top: 30px;
+  padding: var(--gap);
+  background: var(--color-pool-bg);
+  border: 2px dashed var(--color-pool-border);
+}
+
+.pool-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#poolRow {
+  min-height: calc(var(--slot-height) * 1.2);
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--gap);
+  padding-bottom: 5px;
+  align-items: start;
+}
+
+#poolRow .tier-item-wrapper {
+  width: var(--slot-width);
+  height: var(--slot-height);
+  flex: 0 0 var(--slot-width);
+}
+
+#poolRow .tier-item-wrapper:first-child {
+  margin-left: 0;
+}

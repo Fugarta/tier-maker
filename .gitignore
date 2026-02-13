@@ -1,0 +1,16 @@
+# バックアップファイル
+backup/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# エディタ設定
+.vscode/
+.claude/
+
+# ログファイル
+*.log
+
+# 一時ファイル
+*.tmp

@@ -1,0 +1,102 @@
+/**
+ * Tierリスト関連スタイル
+ */
+
+.tier-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tier {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--color-controls-bg);
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: var(--gap) var(--gap) var(--gap) 0;
+  margin-bottom: 8px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.tier:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-border-hover);
+}
+
+.tier-label {
+  width: calc(var(--slot-width) * 0.5);
+  font-weight: bold;
+  text-align: center;
+  margin-right: 14px;
+  font-size: var(--font-size);
+}
+
+.tier-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  flex: 1;
+  min-height: calc(var(--slot-height) * 1.15);
+  align-items: center;
+}
+
+.tier-item-wrapper {
+  position: relative;
+  width: var(--slot-width);
+  height: var(--slot-height);
+  align-items: flex-end;
+  background: var(--color-white);
+  border-radius: 8px;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  overflow: hidden;
+}
+
+.tier-item-wrapper:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-border-hover);
+}
+
+.tier-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  cursor: grab;
+  display: block;
+  border-radius: 8px;
+  transition: filter 0.2s;
+}
+
+.tier-item:active {
+  cursor: grabbing;
+  filter: brightness(0.93);
+}
+
+.label-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--color-label-overlay);
+  color: var(--color-white);
+  font-size: var(--font-size);
+  text-align: center;
+  outline: none;
+  resize: none;
+  padding: 0px;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 2;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: background 0.2s;
+}

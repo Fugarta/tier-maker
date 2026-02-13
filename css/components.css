@@ -1,0 +1,65 @@
+/**
+ * その他のコンポーネント
+ */
+
+/* タッチドラッグ中のスタイル */
+.touch-dragging {
+  pointer-events: none;
+  opacity: 0.6;
+  box-shadow: var(--shadow-touch);
+  transition: opacity 0.2s ease;
+}
+
+/* Twitterリンク */
+.twitter-link {
+  text-decoration: none;
+  color: var(--color-twitter);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.twitter-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* エラーメッセージ */
+.error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--color-error);
+  color: var(--color-white);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-error);
+  z-index: 1000;
+  font-weight: bold;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+/* アニメーション */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

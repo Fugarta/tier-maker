@@ -1,0 +1,46 @@
+/**
+ * コントロール（ボタン、入力）
+ */
+
+.controls {
+  margin-top: 30px;
+  text-align: center;
+  background: var(--color-controls-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 20px 10px 10px 10px;
+  display: inline-block;
+  border: 1.5px solid var(--color-border-light);
+}
+
+.controls button,
+.controls input[type="file"] {
+  background: linear-gradient(90deg, var(--color-button-bg-start) 0%, var(--color-button-bg-end) 100%);
+  color: #222;
+  border: 2px solid var(--color-button-border);
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: var(--font-size);
+  font-weight: bold;
+  margin: 0 5px 10px 5px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s, border-color 0.2s;
+  outline: none;
+  vertical-align: middle;
+}
+
+.controls button:hover,
+.controls input[type="file"]:hover {
+  background: linear-gradient(90deg, var(--color-button-hover-start) 0%, var(--color-button-hover-end) 100%);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.controls button:active,
+.controls input[type="file"]:active {
+  background: linear-gradient(90deg, var(--color-button-active-start) 0%, var(--color-button-active-end) 100%);
+  border-color: var(--color-border-hover);
+  transform: translateY(1px) scale(0.98);
+}

@@ -1,0 +1,24 @@
+/**
+ * 基本スタイル
+ */
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 20px;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: var(--color-text-dark);
+}
+
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

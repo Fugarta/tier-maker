@@ -1,0 +1,37 @@
+/**
+ * レスポンシブデザイン
+ */
+
+/* 画面幅が1000px以下の場合 */
+@media (max-width: 1000px) {
+  :root {
+    --slot-width: 10vw;
+    --slot-height: 10vw;
+    --gap: calc(var(--slot-width) * 0.1);
+    --font-size: 0.85rem;
+  }
+}
+
+/* 画面幅が600px以下の場合（スマートフォン） */
+@media (max-width: 600px) {
+  :root {
+    --slot-width: 15vw;
+    --slot-height: 15vw;
+    --gap: calc(var(--slot-width) * 0.1);
+    --font-size: 0.75rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .controls {
+    padding: 15px 5px 5px 5px;
+  }
+
+  .controls button,
+  .controls input[type="file"] {
+    padding: 8px 15px;
+    margin: 0 3px 8px 3px;
+  }
+}
