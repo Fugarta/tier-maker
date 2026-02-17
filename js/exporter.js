@@ -63,7 +63,7 @@ function optimizeContainerWidth() {
   const optimalWidth = tierLabelWidth + tierLabelMargin + maxContentWidth + tierPaddingLeft + tierPaddingRight + 40;
 
   // 最小幅を確保（タイトルが表示できる程度）
-  const minWidth = 600;
+  const minWidth = 300;
   const finalWidth = Math.max(optimalWidth, minWidth);
 
   // 幅を一時的に設定

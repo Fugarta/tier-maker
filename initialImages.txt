@@ -7,7 +7,7 @@ images/gekkou.png,月光
 images/syncron.png,シンクロン
 images/malice.png,M∀LICE
 images/whiteforest.png,白き森
-images/k9.png,純K9
+images/K9.png,純K9
 images/crystron.png,K9水晶
 images/sentou.png,閃刀姫
 images/gemknight.png,ジェムナイト
