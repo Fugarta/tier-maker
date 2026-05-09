@@ -1,7 +1,9 @@
-images/yummy.png,ヤミー
 images/killertune.png,キラーチューン
 images/vs.png,VSK9
 images/mitsurugi.png,巳剣
+images/magnet.png,磁石
+images/sentou.png,閃刀姫
+images/yummy.png,ヤミー
 images/dragontail.png,ドラゴンテイル
 images/rishido.png,リシド
 images/gekkou.png,月光
@@ -9,12 +11,10 @@ images/syncron.png,シンクロン
 images/malice.png,M∀LICE
 images/kenran.png,絢嵐
 images/whiteforest.png,白き森
-images/magnet.png,磁石
 images/rb.png,R.B.
-images/crystron.png,K9水晶
-images/sentou.png,閃刀姫
+images/elphen.png,エルフェンノーツ
+images/exso.png,エクソシスター
 images/gemknight.png,ジェムナイト
-images/ddd.png,DDD
 images/onomato.png,オノマトライゼ
 images/orcust.png,オルフェゴール
 images/tiera.png,ティアラメンツ
