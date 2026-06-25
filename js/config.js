@@ -15,6 +15,12 @@ export const PRESETS = {
     title: 'SYNCRO CUP TIER MAKER',
     initialImagesPath: './syncro-cup/initialImages.txt',
     tweetText: 'Syncro Cup Tier Makerでティア表を作りました\nhttps://fugarta.github.io/tier-maker/?preset=syncro-cup'
+  },
+  'fusion-cup': {
+    name: 'Fusion Cup',
+    title: 'FUSION CUP TIER MAKER',
+    initialImagesPath: './fusion-cup/initialImages.txt',
+    tweetText: 'Fusion Cup Tier Makerでティア表を作りました\nhttps://fugarta.github.io/tier-maker/?preset=fusion-cup'
   }
 };
 
