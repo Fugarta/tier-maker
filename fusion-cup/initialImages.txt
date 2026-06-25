@@ -4,6 +4,7 @@ images/gekkou.png,月光
 images/dyno.png,ダイノルフィア
 images/mitsurugi.png,巳剣
 images/enia.png,エニアクラフト
+images/sennen.png,千年エクゾ
 images/magnet.png,磁石
 images/shadoll.png,シャドール
 images/syoukan.png,召喚獣
@@ -14,6 +15,7 @@ images/azamina.png,アザミナ
 images/plants.png,捕食植物
 images/gemknight.png,ジェムナイト
 images/rishido.png,リシド
+images/runick.png,神碑
 images/tiera.png,ティアラメンツ
 images/rabu.png,ラビュリンス
 images/voicelessvoice.png,粛声
