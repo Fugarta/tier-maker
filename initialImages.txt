@@ -5,6 +5,7 @@ images/sentou.png,閃刀姫
 images/mitsurugi.png,巳剣
 images/vs.png,VSK9
 images/elphen.png,エルフェンノーツ
+images/fairytale.png,妖精伝姫
 images/kenran.png,絢嵐
 images/enia.png,エニアクラフト
 images/12.png,十二
