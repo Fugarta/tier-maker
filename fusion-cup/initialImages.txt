@@ -11,6 +11,8 @@ images/rishido.png,リシド
 images/smith.png,スミスGS
 images/plants.png,捕食植物
 images/dyno.png,ダイノルフィア
+images/reizyu.png,霊獣
+images/gensou.png,幻奏
 images/magnet.png,磁石
 images/shadoll.png,シャドール
 images/syoukan.png,召喚獣
