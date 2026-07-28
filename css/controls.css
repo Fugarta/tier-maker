@@ -24,7 +24,8 @@
 }
 
 .controls button,
-.controls input[type="file"] {
+.controls input[type="file"],
+.controls-button {
   background: linear-gradient(90deg, var(--color-button-bg-start) 0%, var(--color-button-bg-end) 100%);
   color: #222;
   border: 2px solid var(--color-button-border);
@@ -41,7 +42,8 @@
 }
 
 .controls button:hover,
-.controls input[type="file"]:hover {
+.controls input[type="file"]:hover,
+.controls-button:hover {
   background: linear-gradient(90deg, var(--color-button-hover-start) 0%, var(--color-button-hover-end) 100%);
   border-color: var(--color-border-hover);
   box-shadow: var(--shadow-lg);
@@ -49,7 +51,8 @@
 }
 
 .controls button:active,
-.controls input[type="file"]:active {
+.controls input[type="file"]:active,
+.controls-button:active {
   background: linear-gradient(90deg, var(--color-button-active-start) 0%, var(--color-button-active-end) 100%);
   border-color: var(--color-border-hover);
   transform: translateY(1px) scale(0.98);

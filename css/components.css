@@ -36,7 +36,8 @@
 }
 
 /* 画像結合コントロール */
-.composition-controls {
+.composition-controls,
+.tier-controls {
   text-align: center;
   background: #f9f9f9;
   border-radius: 10px;
@@ -80,9 +81,7 @@
 }
 
 .compose-btn {
-  background: linear-gradient(90deg, #5ba3f5 0%, #4a90e2 100%);
   color: white;
-  border: 2px solid #3a7bc8;
   border-radius: 6px;
   padding: 10px 20px;
   font-size: 0.95rem;
@@ -93,13 +92,30 @@
 }
 
 .compose-btn:hover:not(:disabled) {
-  background: linear-gradient(90deg, #4a90e2 0%, #3a7bc8 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
 
 .compose-btn:active:not(:disabled) {
   transform: translateY(0);
+}
+
+.tier-controls .compose-btn {
+  background: linear-gradient(90deg, var(--color-button-bg-start) 0%, var(--color-button-bg-end) 100%);
+  color: #222;
+  border: 2px solid var(--color-button-border);
+  min-width: 52px;
+  width: 52px;
+}
+
+.tier-controls .compose-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, var(--color-button-hover-start) 0%, var(--color-button-hover-end) 100%);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.tier-controls .compose-btn:active:not(:disabled) {
+  background: linear-gradient(90deg, var(--color-button-active-start) 0%, var(--color-button-active-end) 100%);
+  border-color: var(--color-border-hover);
 }
 
 .compose-btn:disabled {
